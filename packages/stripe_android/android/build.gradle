@@ -21,6 +21,14 @@ rootProject.allprojects {
         google()
         mavenCentral()
     }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KaptGenerateStubs).configureEach {
+        kotlinOptions.jvmTarget = "1.8"
+    }     
 }
 
 apply plugin: 'com.android.library'
